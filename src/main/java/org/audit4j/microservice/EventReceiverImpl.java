@@ -2,12 +2,11 @@ package org.audit4j.microservice;
 
 import org.audit4j.core.AuditManager;
 import org.audit4j.core.dto.AuditEvent;
-import org.audit4j.microservice.client.ClientContext;
 import org.audit4j.microservice.transport.Ack;
 
 public class EventReceiverImpl implements EventReceiver {
 
-	private ClientContext clientContext = null;
+	private ClientRegistry clientContext = null;
 
 	@Override
 	public Ack receive(AuditEvent event) {
@@ -20,7 +19,7 @@ public class EventReceiverImpl implements EventReceiver {
 		}
 	}
 
-	public void setClientContext(ClientContext clientContext) {
+	public void setClientContext(ClientRegistry clientContext) {
 		this.clientContext = clientContext;
 	}
 }

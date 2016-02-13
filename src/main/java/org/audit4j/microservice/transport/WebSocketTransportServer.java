@@ -8,8 +8,9 @@ import org.audit4j.core.dto.AuditEvent;
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.core.util.Log;
 import org.audit4j.microservice.EventReceiver;
+import org.audit4j.microservice.Transport;
 
-public class WebSocketServer extends Transport {
+public class WebSocketTransportServer extends Transport {
 
 	Serializer serializer;
 
@@ -76,7 +77,7 @@ public class WebSocketServer extends Transport {
 	}
 
 	public static void main(String[] args) {
-		WebSocketServer server = new WebSocketServer();
+		WebSocketTransportServer server = new WebSocketTransportServer();
 		server.init();
 	}
 }
