@@ -7,8 +7,9 @@ import org.audit4j.core.AuditManager;
 import org.audit4j.core.dto.AuditEvent;
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.core.util.Log;
+import org.audit4j.microservice.EventReceiver;
 
-public class WebSocketServer implements TransportServer {
+public class WebSocketServer extends Transport {
 
 	Serializer serializer;
 
@@ -37,7 +38,7 @@ public class WebSocketServer implements TransportServer {
 											Log.info("Recived Message..");
 											ws.writeBinaryMessage(Buffer.buffer(serializer
 													.toByteArray(Ack.SUCCESS())));
-											AuditManager.getInstance().audit(auditEvent);
+											receive(auditEvent);
 										} catch (Exception e) {
 											ws.writeBinaryMessage(Buffer
 													.buffer(serializer
@@ -51,7 +52,7 @@ public class WebSocketServer implements TransportServer {
 												AuditEvent.class);
 										Log.info("Recived Message..");
 										ws.writeFinalTextFrame("success");
-										AuditManager.getInstance().audit(auditEvent);
+										receive(auditEvent);
 									}
 								}
 

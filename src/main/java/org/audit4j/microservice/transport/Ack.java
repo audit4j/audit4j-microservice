@@ -38,8 +38,15 @@ public class Ack implements Serializable{
 	
 	public static Ack FAIL(){
 		Ack ack = new Ack();
-		ack.setCode(404);
+		ack.setCode(500);
 		ack.setMessage("fail");
+		return ack;
+	}
+	
+	public static Ack UNAUTHORIZED(){
+		Ack ack = new Ack();
+		ack.setCode(401);
+		ack.setMessage("unauthorized");
 		return ack;
 	}
 }

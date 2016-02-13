@@ -7,7 +7,9 @@ public class Main {
 	}
 	
 	public static void main() {
-		Context server = new ServerContext();
+		ServerContext server = new ServerContext();
 		server.start();
+		System.out.println(server.getClientContext().registerClient("asdsadd"));
+	//	server.stop();
 	}
 }

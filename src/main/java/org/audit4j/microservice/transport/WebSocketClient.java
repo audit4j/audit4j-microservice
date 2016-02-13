@@ -15,10 +15,11 @@ import org.nustaq.serialization.FSTConfiguration;
 public class WebSocketClient<E extends Event> implements Initializable,
 		TransportClient<E> {
 
-	FSTConfiguration conf;
-	WebsocketHandler handler = null;
-	HttpClient client;
-	Vertx vertx;
+	private FSTConfiguration conf;
+	private WebsocketHandler handler = null;
+	private HttpClient client;
+	private Vertx vertx;
+	private Integer port = 9999;
 
 	@Override
 	public void init() throws InitializationException {
@@ -31,7 +32,7 @@ public class WebSocketClient<E extends Event> implements Initializable,
 		vertx = Vertx.vertx();
 		client = vertx.createHttpClient();
 
-		client.websocket(9999, "localhost", "/audit", handler);
+		client.websocket(port, "localhost", "/audit", handler);
 	}
 
 	@Override
@@ -53,6 +54,7 @@ public class WebSocketClient<E extends Event> implements Initializable,
 		TimeUnit.SECONDS.sleep(5);
 		for (int i = 0; i < 500; i++) {
 			AuditEvent event = new AuditEvent();
+			event.setClient("03a1c230-d1fa-11e5-9758-68f728daf525");
 			event.setAction("asdsa" + i);
 			event.setActor("asdas");
 			client.send(event);
