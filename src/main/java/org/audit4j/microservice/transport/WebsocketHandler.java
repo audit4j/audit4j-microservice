@@ -21,7 +21,6 @@ public class WebsocketHandler implements Handler<WebSocket>, Initializable{
 			System.out.println(ack.getMessage());
 		});
 		
-
 		//byte eventBytes[] = conf.asByteArray(event);
 		//websocket.writeBinaryMessage(Buffer.buffer(eventBytes));
 		//websocket.close();

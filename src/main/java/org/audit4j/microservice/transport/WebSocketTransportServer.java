@@ -1,14 +1,12 @@
 package org.audit4j.microservice.transport;
 
-import io.vertx.core.Vertx;
-import io.vertx.core.buffer.Buffer;
-
-import org.audit4j.core.AuditManager;
 import org.audit4j.core.dto.AuditEvent;
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.core.util.Log;
-import org.audit4j.microservice.EventReceiver;
 import org.audit4j.microservice.Transport;
+
+import io.vertx.core.Vertx;
+import io.vertx.core.buffer.Buffer;
 
 public class WebSocketTransportServer extends Transport {
 

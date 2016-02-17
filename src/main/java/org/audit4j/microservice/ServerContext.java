@@ -6,6 +6,7 @@ import java.util.Map;
 import org.audit4j.core.AuditManager;
 import org.audit4j.core.exception.ConfigurationException;
 import org.audit4j.core.exception.InitializationException;
+import org.audit4j.core.util.Log;
 
 class ServerContext implements Context {
 
@@ -17,7 +18,7 @@ class ServerContext implements Context {
 
 	@Override
 	public void start() throws InitializationException {
-
+		Log.info("Starting Audit4j Microservice....");
 		// Load Configurations
 		ConfigurationManager manager = new ConfigurationManager();
 		try {

@@ -71,10 +71,15 @@
 			<version>2.4.0</version>
 		</dependency>
 
-		<!-- Qbit dependencies -->
+		<!-- Vertx dependencies -->
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-core</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-web</artifactId>
 			<version>3.1.0</version>
 		</dependency>
 
@@ -89,7 +94,7 @@
 			<artifactId>fst</artifactId>
 			<version>2.42</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.eaio.uuid</groupId>
 			<artifactId>uuid</artifactId>
