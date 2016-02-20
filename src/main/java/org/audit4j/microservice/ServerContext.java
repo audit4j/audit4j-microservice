@@ -45,7 +45,7 @@ class ServerContext implements Context {
 		AuditManager.getInstance();
 	}
 
-	public ClientRegistry getClientRegistry() {
+	ClientRegistry getClientRegistry() {
 		return clientRegistry;
 	}
 
