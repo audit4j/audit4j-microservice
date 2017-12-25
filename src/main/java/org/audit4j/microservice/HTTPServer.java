@@ -22,10 +22,10 @@ public class HTTPServer extends AbstractVerticle {
         
         router.post("/rest/event").handler(new RESTAuditEventHandler()::handleEvent);
         
-        router.get("/manage/client/register")
-                .handler(new RESTClientHandler(context.getClientRegistry())::registorClient);
-        router.get("/manage/client/unregister")
-                .handler(new RESTClientHandler(context.getClientRegistry())::registorClient);
+        //router.get("/manage/client/register")
+        //        .handler(new RESTClientHandler(context.getClientRegistry())::registorClient);
+        //router.get("/manage/client/unregister")
+        //        .handler(new RESTClientHandler(context.getClientRegistry())::registorClient);
         
         router.route("/*").handler(StaticHandler.create());
 

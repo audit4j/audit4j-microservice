@@ -1,0 +1,7 @@
+!ServerConfiguration
+transports: 
+- !org.audit4j.microservice.transport.WebSocketTransportServer {}
+- !org.audit4j.microservice.transport.thrift.ThriftTransportServer {}
+
+properties: 
+   log.file.location: user.dir

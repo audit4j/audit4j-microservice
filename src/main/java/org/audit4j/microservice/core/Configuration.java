@@ -1,7 +1,7 @@
 /*
  * 
  */
-package org.audit4j.microservice;
+package org.audit4j.microservice.core;
 
 import java.util.Map;
 
@@ -9,30 +9,9 @@ import java.util.Map;
  * The Class Configuration.
  */
 public class Configuration {
-
-	/** The transport port. */
-	private Integer transportPort;
-	
+    
     /** The properties. */
     private Map<String, String> properties;
-
-	/**
-	 * Gets the transport port.
-	 *
-	 * @return the transport port
-	 */
-	public Integer getTransportPort() {
-		return transportPort;
-	}
-
-	/**
-	 * Sets the transport port.
-	 *
-	 * @param transportPort the new transport port
-	 */
-	public void setTransportPort(Integer transportPort) {
-		this.transportPort = transportPort;
-	}
 
 	/**
 	 * Gets the properties.
@@ -51,4 +30,9 @@ public class Configuration {
 	public void setProperties(Map<String, String> properties) {
 		this.properties = properties;
 	}
+
+    @Override
+    public String toString() {
+        return "Configuration [properties=" + properties + "]";
+    }
 }

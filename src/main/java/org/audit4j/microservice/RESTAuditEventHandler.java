@@ -1,7 +1,9 @@
 package org.audit4j.microservice;
 
 import org.audit4j.core.dto.AuditEvent;
-import org.audit4j.microservice.transport.Ack;
+import org.audit4j.microservice.core.Ack;
+import org.audit4j.microservice.core.EventReceiver;
+import org.audit4j.microservice.core.EventReceiverImpl;
 
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.Json;

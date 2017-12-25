@@ -1,0 +1,4 @@
+!ServerConfiguration
+properties: 
+   web.socket.port: 100
+   rpc.port: 9091

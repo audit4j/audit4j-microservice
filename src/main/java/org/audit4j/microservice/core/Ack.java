@@ -1,4 +1,4 @@
-package org.audit4j.microservice.transport;
+package org.audit4j.microservice.core;
 
 import java.io.Serializable;
 

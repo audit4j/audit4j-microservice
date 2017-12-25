@@ -6,6 +6,7 @@ import io.vertx.core.http.WebSocket;
 
 import org.audit4j.core.Initializable;
 import org.audit4j.core.exception.InitializationException;
+import org.audit4j.microservice.core.Ack;
 import org.nustaq.serialization.FSTConfiguration;
 
 public class WebsocketHandler implements Handler<WebSocket>, Initializable{

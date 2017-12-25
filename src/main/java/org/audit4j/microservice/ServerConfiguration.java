@@ -1,24 +1,26 @@
 package org.audit4j.microservice;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.audit4j.microservice.core.Configuration;
+import org.audit4j.microservice.core.Transport;
+
 public class ServerConfiguration extends Configuration {
 
-	private String webSocketport;
-	
-	private String serverPort;
+    private List<Transport> transports = new ArrayList<>();
+    
+    public List<Transport> getTransports() {
+        return transports;
+    }
 
-	public String getWebSocketport() {
-		return webSocketport;
-	}
+    public void setTransports(List<Transport> transports) {
+        this.transports = transports;
+    }
 
-	public void setWebSocketport(String webSocketport) {
-		this.webSocketport = webSocketport;
-	}
-
-	public String getServerPort() {
-		return serverPort;
-	}
-
-	public void setServerPort(String serverPort) {
-		this.serverPort = serverPort;
-	}
+    @Override
+    public String toString() {
+        return "ServerConfiguration [transports=" + transports + "]";
+    }
 }

@@ -1,4 +1,4 @@
-package org.audit4j.microservice;
+package org.audit4j.microservice.core;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,7 +16,7 @@ import org.audit4j.microservice.util.KeyGenerator;
 /**
  * The Class ClientContext.
  */
-class ClientRegistry implements Initializable {
+public class ClientRegistry implements Initializable {
 
 	/** The clients. */
 	Map<String, Client> clients = new ConcurrentHashMap<>();

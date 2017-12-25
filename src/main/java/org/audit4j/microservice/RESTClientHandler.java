@@ -1,5 +1,7 @@
 package org.audit4j.microservice;
 
+import org.audit4j.microservice.core.ClientRegistry;
+
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;

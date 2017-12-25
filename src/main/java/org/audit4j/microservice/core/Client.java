@@ -1,4 +1,4 @@
-package org.audit4j.microservice;
+package org.audit4j.microservice.core;
 
 public class Client {
 	

@@ -1,4 +1,4 @@
-package org.audit4j.microservice;
+package org.audit4j.microservice.core;
 
 import java.util.Map;
 
@@ -40,7 +40,11 @@ public abstract class Transport implements Initializable {
 	 *
 	 * @param properties the properties
 	 */
-	void setProperties(final Map<String, String> properties) {
+	public void setProperties(final Map<String, String> properties) {
 		this.properties = properties;
 	}
+
+    public EventReceiver getReciever() {
+        return reciever;
+    }
 }
