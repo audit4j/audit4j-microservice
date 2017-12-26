@@ -4,9 +4,6 @@ import org.audit4j.core.AuditManager;
 import org.audit4j.core.dto.AuditEvent;
 
 public class EventReceiverImpl implements EventReceiver {
-
-	private ClientRegistry clientContext = null;
-
 	@Override
 	public Ack receive(AuditEvent event) {
 		/*// Validate Event
@@ -19,9 +16,5 @@ public class EventReceiverImpl implements EventReceiver {
 		
 		AuditManager.getInstance().audit(event);
         return Ack.SUCCESS();
-	}
-
-	public void setClientContext(ClientRegistry clientContext) {
-		this.clientContext = clientContext;
 	}
 }

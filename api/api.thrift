@@ -30,6 +30,10 @@ struct TAuditEvent	 {
   10: optional Fields fields,
 }
 
+struct TAuditEventBatch {
+  1. list<TAuditEvent> events
+}
+
 struct TAck {
   1: string message,
   2: int code

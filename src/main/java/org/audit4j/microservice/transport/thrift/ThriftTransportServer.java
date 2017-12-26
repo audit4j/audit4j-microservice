@@ -85,7 +85,7 @@ public class ThriftTransportServer extends Transport {
             TServerTransport serverTransport = new TServerSocket(new InetSocketAddress(serverHost, serverPort));
             tServer = new TSimpleServer(new Args(serverTransport).processor(processor));
 
-            System.out.println("Starting the simple server...");
+            System.out.println("Simple RPC server started.! port: " + serverPort );
             tServer.serve();
         } catch (Exception e) {
             e.printStackTrace();
@@ -109,8 +109,8 @@ public class ThriftTransportServer extends Transport {
                 tServer = new TSimpleServer(new Args(serverTransport).processor(processor));
             }
 
-            System.out.println("Starting the secure server...");
             tServer.serve();
+            System.out.println("Secure RPC server started.! port: " + serverPort );
         } catch (Exception e) {
             e.printStackTrace();
         }

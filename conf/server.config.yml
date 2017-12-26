@@ -1,7 +1,7 @@
 !ServerConfiguration
 transports: 
-- !org.audit4j.microservice.transport.WebSocketTransportServer {}
-- !org.audit4j.microservice.transport.thrift.ThriftTransportServer {}
+- !org.audit4j.microservice.transport.thrift.ThriftTransportServer {} #Transport via websocket: Default port 9092
+- !org.audit4j.microservice.transport.WebSocketTransportServer {} #Transport via websocket: Default port 9091
 
 properties: 
    log.file.location: user.dir

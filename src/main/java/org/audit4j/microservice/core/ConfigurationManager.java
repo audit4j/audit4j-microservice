@@ -13,16 +13,17 @@ public class ConfigurationManager {
 
 	private ConfigProvider<ServerConfiguration> configProvider;
 
-	private static final String DEFAULT_CONFIG_FILE = "conf/server.config.yml";
+	private String configPath = "conf/server.config.yml";
 
-	public ConfigurationManager() {
+	public ConfigurationManager(String configPath) {
+	    this.configPath = configPath;
 		configProvider = new YAMLConfigProvider<>(ServerConfiguration.class);
 	}
 
 	public ServerConfiguration loadConfiguration() throws ConfigurationException {
 		ServerConfiguration config = null;
 			config = configProvider
-					.readConfig(DEFAULT_CONFIG_FILE);
+					.readConfig(configPath);
 		return config;
 	}
 

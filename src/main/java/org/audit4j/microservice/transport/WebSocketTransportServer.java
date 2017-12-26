@@ -58,7 +58,7 @@ public class WebSocketTransportServer extends Transport {
 
 							});
 						})).listen(port);
-
+        System.out.println("Web Socket Transport server started.! port: " + port );
 	}
 
 	public void setPort(int port) {

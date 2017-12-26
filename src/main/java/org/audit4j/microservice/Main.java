@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     static boolean shutdown = false;
+    
 	public static void main(String[] args) {
 		main();
 	}
@@ -18,6 +19,7 @@ public class Main {
 		if ("exit".equals(line)) {
 		    server.stop();
 		    shutdown = true;
+		    System.exit(0);
         }
 		
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {

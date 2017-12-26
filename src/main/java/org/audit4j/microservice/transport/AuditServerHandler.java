@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.audit4j.core.dto.AuditEvent;
 import org.audit4j.core.dto.Event;
+import org.audit4j.core.dto.EventBatch;
 import org.audit4j.core.exception.HandlerException;
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.core.handler.Handler;
@@ -62,6 +63,24 @@ public class AuditServerHandler<E extends Event> extends Handler  {
 			client.handle();
 		}
 	}
+
+    @Override
+    public void handle(String formattedEvent) throws HandlerException {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void handle(AuditEvent event) throws HandlerException {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void handle(EventBatch batch) throws HandlerException {
+        // TODO Auto-generated method stub
+        
+    }
 
 
 	
