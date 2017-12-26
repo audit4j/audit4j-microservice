@@ -1,6 +1,7 @@
 package org.audit4j.microservice;
 
 import org.audit4j.core.exception.InitializationException;
+import org.audit4j.microservice.core.HTTPServer;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
@@ -27,12 +28,7 @@ public class VertxServer extends AbstractVerticle implements HTTPServer{
         router.get("/health").handler(this::handlerHealth);
         
         router.post("/rest/event").handler(new RESTAuditEventHandler()::handleEvent);
-        
-        //router.get("/manage/client/register")
-        //        .handler(new RESTClientHandler(context.getClientRegistry())::registorClient);
-        //router.get("/manage/client/unregister")
-        //        .handler(new RESTClientHandler(context.getClientRegistry())::registorClient);
-        
+              
         router.route("/*").handler(StaticHandler.create());
 
         vertx.createHttpServer().requestHandler(router::accept).listen(port);

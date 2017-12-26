@@ -7,6 +7,7 @@ import org.audit4j.core.exception.ConfigurationException;
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.microservice.core.ConfigurationManager;
 import org.audit4j.microservice.core.Context;
+import org.audit4j.microservice.core.HTTPServer;
 import org.audit4j.microservice.core.Transport;
 
 class ServerContext implements Context {

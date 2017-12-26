@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static boolean shutdown = false;
+    private static boolean shutdown = false;
     
 	public static void main(String[] args) {
 		main();
