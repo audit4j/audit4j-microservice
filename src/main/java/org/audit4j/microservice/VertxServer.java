@@ -2,6 +2,8 @@ package org.audit4j.microservice;
 
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.microservice.core.HTTPServer;
+import org.audit4j.microservice.web.WebRouter;
+import org.audit4j.microservice.web.rest.RestRouter;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
@@ -22,23 +24,19 @@ public class VertxServer extends AbstractVerticle implements HTTPServer{
     
     @Override
     public void start() {
-        Router router = Router.router(vertx);
+        WebRouter webRouter = new WebRouter(vertx);
+        Router router = webRouter.getRouter();
 
-        router.route().handler(BodyHandler.create());
-        router.get("/health").handler(this::handlerHealth);
+        RestRouter restRouter = new RestRouter(vertx);
+        router.mountSubRouter("/api", restRouter.getRouter());
         
-        router.post("/rest/event").handler(new RESTAuditEventHandler()::handleEvent);
-              
-        router.route("/*").handler(StaticHandler.create());
 
+        router.route("/*").handler(StaticHandler.create());
+        
         vertx.createHttpServer().requestHandler(router::accept).listen(port);
     }
 
-    private void handlerHealth(RoutingContext routingContext) {
-        HttpServerResponse response = routingContext.response();
-        response.putHeader("content-type", "application/json")
-                .end(new JsonObject().put("status", "running").encodePrettily());
-    }
+    
     
     public static void main(String[] args) {
         VertxServer server = new VertxServer();

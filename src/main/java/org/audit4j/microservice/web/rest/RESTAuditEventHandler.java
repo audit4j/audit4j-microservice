@@ -1,4 +1,4 @@
-package org.audit4j.microservice;
+package org.audit4j.microservice.web.rest;
 
 import org.audit4j.core.dto.AuditEvent;
 import org.audit4j.microservice.core.Ack;
