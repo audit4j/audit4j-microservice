@@ -96,4 +96,11 @@ class ServerContext implements Context {
 
     }
 
+    void setServerConfigFilePath(String serverConfigFilePath) {
+        this.serverConfigFilePath = serverConfigFilePath;
+    }
+
+    void setAudit4jConfigFilePath(String audit4jConfigFilePath) {
+        this.audit4jConfigFilePath = audit4jConfigFilePath;
+    }
 }
