@@ -12,9 +12,9 @@ import org.audit4j.microservice.core.Transport;
 
 class ServerContext implements Context {
 
-    private String serverConfigFilePath = "conf/server.config.yml";
+    private String serverConfigFilePath = "../conf/server.config.yml";
 
-    private String audit4jConfigFilePath = "conf/audit4j.conf.yml";
+    private String audit4jConfigFilePath = "../conf/audit4j.conf.yml";
 
     private HTTPServer httpServer = new VertxServer();
 

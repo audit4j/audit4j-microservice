@@ -15,7 +15,7 @@ public class AppRunningChecker {
 
     @SuppressWarnings("resource")
     public static boolean checkIfAlreadyRunning() throws IOException {
-        file = new File("lock/"+ "server.lock");
+        file = new File("../lock/"+ "server.lock");
         if (!file.exists()) {
             file.createNewFile();
             running = true;
