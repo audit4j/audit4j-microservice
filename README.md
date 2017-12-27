@@ -12,7 +12,7 @@ Execute below two maven goals.
 ## Run the microservice
 
 1. Copy and extract `audit4j-microservice-1.0.0-distribution.tar.gz` under `target` directory
-2. Go to bin dorectory
+2. Go to bin directory
 3. execute start.bat
 
 Dashboard: http://localhost:8080
