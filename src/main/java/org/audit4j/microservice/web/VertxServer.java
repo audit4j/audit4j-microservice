@@ -1,26 +1,23 @@
-package org.audit4j.microservice;
+package org.audit4j.microservice.web;
 
 import org.audit4j.core.exception.InitializationException;
 import org.audit4j.microservice.core.HTTPServer;
-import org.audit4j.microservice.web.WebRouter;
 import org.audit4j.microservice.web.rest.RestRouter;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
-import io.vertx.core.http.HttpServerResponse;
-import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
 public class VertxServer extends AbstractVerticle implements HTTPServer{
 
-    private ServerContext context;
-
-    private int port = 8080;
+    private int port;
     
     Vertx vertx;
+    
+    public VertxServer(int port) {
+        this.port = port;
+    }
     
     @Override
     public void start() {

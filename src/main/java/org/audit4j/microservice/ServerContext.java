@@ -16,8 +16,6 @@ class ServerContext implements Context {
 
     private String audit4jConfigFilePath = "../conf/audit4j.conf.yml";
 
-    private HTTPServer httpServer = new VertxServer();
-
     private ServerConfiguration config;
 
     @Override
@@ -51,6 +49,7 @@ class ServerContext implements Context {
         }
 
         // Initializing HTTP Server
+        HTTPServer httpServer = HTTPServer.create(8080);
         httpServer.init();
 
         // Initialize Audit4j Core
