@@ -36,7 +36,7 @@ public class VertxServer extends AbstractVerticle implements HTTPServer{
     
     
     public static void main(String[] args) {
-        VertxServer server = new VertxServer();
+        VertxServer server = new VertxServer(8080);
         server.vertx = Vertx.vertx();
         server.vertx.deployVerticle(server);
     }

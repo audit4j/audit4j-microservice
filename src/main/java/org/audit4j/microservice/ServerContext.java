@@ -18,6 +18,8 @@ class ServerContext implements Context {
 
     private ServerConfiguration config;
 
+    HTTPServer httpServer = HTTPServer.create(8080);
+    
     @Override
     public void start() throws InitializationException {
         System.out.println("====================================================");
@@ -49,7 +51,7 @@ class ServerContext implements Context {
         }
 
         // Initializing HTTP Server
-        HTTPServer httpServer = HTTPServer.create(8080);
+        
         httpServer.init();
 
         // Initialize Audit4j Core

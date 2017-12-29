@@ -14,12 +14,14 @@ public class Main {
         server.start();
 
         Scanner sc = new Scanner(System.in);
-        String line = sc.nextLine();
-        if ("exit".equals(line)) {
-            server.stop();
-            System.exit(0);
+        if (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            if ("exit".equals(line)) {
+                server.stop();
+                System.exit(0);
+            }
         }
-
+        
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             server.stop();
         }));
