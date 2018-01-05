@@ -1,10 +1,17 @@
-# audit4j-microservice
+# Overview
 
 Audit4j microservice is developed to fix following limitations in [Audit4j Core](https://github.com/audit4j/audit4j-core).
 
 1. Audit4j core is not supported to embed in applications developed other than Java.
 2. Audit4j core is not suitable for component based enterprise applications (Ex: SOA) which required to store Audit logs in a central location. 
 
+# Getting Started
+
+## Prerequisites
+You need the following installed and available in your $PATH:
+
+* Java 8 (http://java.oracle.com)
+* Apache maven 3.0.4 or greater (http://maven.apache.org/)
 
 ## Build
 
