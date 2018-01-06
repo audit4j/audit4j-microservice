@@ -35,15 +35,34 @@ Dashboard: http://localhost:8080
   * 9092 - RPC transport
 
 ### Configurations
-Configurations files are located in conf directory, [Audit4j core configurations](http://audit4j.org/documentation/#configuration) and Server configurations are served as seperately. 
+Configurations files are located in conf directory, [Audit4j core configurations](http://audit4j.org/documentation/#configuration) and Server configurations are served as seperately.
 
 ## Client Api
 We have developed client api consists of two types of transports for various requirements.
 
 ### RPC transport
-RPC transport is the fastest transport and the protocol is consists of binary and compressed messages. The transport is developed on to of Apache thrift which added out-of-the-box support for various [languages](https://thrift.apache.org/docs/Languages). 
+RPC transport is the fastest transport and the protocol is consists of binary and compressed messages. The transport is developed on top of Apache thrift which added out-of-the-box support for various [languages](https://thrift.apache.org/docs/Languages). 
 
+#### Basic Configurations
+
+conf/server.config.yml
+
+```
+!ServerConfiguration
+transports: 
+- !org.audit4j.microservice.transport.thrift.ThriftTransportServer
+  serverPort = 9999 #server port set to 9999 Default 9092
+  serverHost = localhost
+  multiThreadded = true #Server to initialize as multithreadded server default is single threadded.
+
+```
 #### Genarating client stub
+
+1. [Download and install](https://thrift.apache.org/docs/install/) Apache Thrift Compiler.
+2. Copy Audit4j microservice [api](https://github.com/audit4j/audit4j-microservice/blob/master/api/api.thrift) to a desired location.
+3. Generate client stub using below command.
+
+```thrift --gen <language> api.thrift```
 
 
 ### Web Socket transport
