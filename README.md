@@ -47,7 +47,7 @@ RPC transport is the fastest transport and the protocol is consists of binary an
 
 conf/server.config.yml
 
-```
+```yml
 !ServerConfiguration
 transports: 
 - !org.audit4j.microservice.transport.thrift.ThriftTransportServer
@@ -64,6 +64,29 @@ transports:
 
 ```thrift --gen <language> api.thrift```
 
+#### SSL Configurations
+
+Securing Audit traffic is only recommended if the traffic is exposed as a public service. Using below steps, RPC communication can be secured via SSL. 
+
+1. Creating key store for server
+   ```keytool -genkeypair -alias certificatekey -keyalg RSA -validity 7 -keystore keystore.jks```
+   
+2. Export certificate
+   ```keytool -export -alias certificatekey -keystore keystore.jks -rfc -file cert.cer```
+   
+3. Creating trust store for client
+   ```keytool -import -alias certificatekey -file cert.cer -keystore truststore.jks```
+
+4. Configure RPC transport
+
+```yml
+!ServerConfiguration
+transports: 
+- !org.audit4j.microservice.transport.thrift.ThriftTransportServer
+  secureServer = true
+  secureKeyStore = conf/trust/keystore.jks
+  secureKeyPassword = 123456 #Given password while creating the keystore
+```
 
 ### Web Socket transport
 
