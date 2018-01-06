@@ -34,10 +34,16 @@ Dashboard: http://localhost:8080
   * 9091 - WebSocket transport
   * 9092 - RPC transport
 
+### Configurations
+Configurations files are located in conf directory, [Audit4j core configurations](http://audit4j.org/documentation/#configuration) and Server configurations are served as seperately. 
+
 ## Client Api
-We have developed client api consists of two types of transports
+We have developed client api consists of two types of transports for various requirements.
 
 ### RPC transport
+RPC transport is the fastest transport and the protocol is consists of binary and compressed messages. The transport is developed on to of Apache thrift which added out-of-the-box support for various [languages](https://thrift.apache.org/docs/Languages). 
+
+#### Genarating client stub
 
 
 ### Web Socket transport
