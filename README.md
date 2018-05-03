@@ -94,7 +94,7 @@ transports:
 # Support
 The following methods are available to obtain support:
 
-- [The Audit4j Google Group](https://groups.google.com/forum/#!forum/audit4j) - This would normally be your first stop to get support for Swagger. Here you can find previously asked question, and ask new ones. When asking a question, please provide as much information as you can regarding the environment you use (development language, library, versions.
+- [The Audit4j Google Group](https://groups.google.com/forum/#!forum/audit4j) - This would normally be your first stop to get support for Audit4j. Here you can find previously asked question, and ask new ones. When asking a question, please provide as much information as you can regarding the environment you use (development language, library, versions.
 - The [Issues tab](https://github.com/audit4j/audit4j-microservice/issues) - Please open feature requests and bugs here. If you're not sure you encountered a bug, or if it's a general usage question, please use the Google Group mentioned above.
 
 
